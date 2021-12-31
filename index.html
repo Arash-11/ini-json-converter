@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="ini,json,converter">
+  <meta name="description" content="An online tool that converts INI format to JSON and vice versa." />
+  <title>INI/JSON Converter</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="src/index.js" defer></script>
+</head>
+<body>
+  <main class="container">
+
+    <div class="input-container">
+      <label for="input-textarea">Input</label>
+      <div class="input-container__wrapper">
+        <textarea
+          id="input-textarea"
+          class="input-container__textarea"
+          autocorrect="off"
+          spellcheck="false"
+          autocomplete="off"
+          autofocus></textarea>
+      </div>
+    </div>
+
+    <div class="buttons-container">
+      <button class="action-btn" data-convert-to-json>Convert to JSON</button>
+      <button class="action-btn" data-convert-to-ini>Convert to INI</button>
+    </div>
+
+    <div class="output-container">
+      <label for="output-textarea">Output</label>
+      <div class="output-container__wrapper">
+        <textarea
+          id="output-textarea"
+          class="output-container__textarea"
+          autocorrect="off"
+          spellcheck="false"
+          autocomplete="off"
+          readonly></textarea>
+      </div>
+    </div>
+
+  </main>
+</body>
+</html>

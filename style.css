@@ -1,0 +1,153 @@
+:root {
+  --clr-light1: #eee;
+  --clr-light2: #ccc;
+  --clr-dark1: #aaa;
+  --clr-dark2: #333;
+  --clr-dark3: #4a4a4a;
+  --clr-dark4: #444;
+  --clr-1: #009578;
+  --clr-2: #00705a;
+  --clr-error: #ff6347;
+
+  --ff-editor: monospace;
+
+  --outline-offset: 4px;
+
+  --button-width: 200px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--clr-dark2);
+}
+
+body {
+  line-height: 1.5;
+  font-size: 1rem;
+  font-family:'Arial', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+textarea {
+  border: none;
+  resize: none;
+  overflow: auto;
+  overflow-wrap: normal;
+  background-color: var(--clr-dark4);
+}
+
+
+.container {
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr var(--button-width) 1fr;
+  align-items: center;
+  height: 100%;
+  gap: 20px;
+}
+
+
+.input-container,
+.output-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+}
+
+.input-container label,
+.output-container label {
+  display: block;
+  text-align: center;
+  color: var(--clr-light2);
+}
+
+.input-container__wrapper,
+.output-container__wrapper {
+  flex-grow: 1;
+  display: flex;
+}
+
+.input-container__textarea,
+.output-container__textarea {
+  padding: 20px;
+  flex-grow: 1;
+  border-radius: 0 5px 5px 0;
+  color: var(--clr-light1);
+  font-family: var(--ff-editor);
+  transition: background-color 0.25s;
+  outline: none;
+}
+
+.input-container__textarea:focus,
+.output-container__textarea:focus {
+  background-color: var(--clr-dark3);
+}
+
+
+.buttons-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.action-btn {
+  padding: 8px 14px;
+  width: 100%;
+  border-radius: 3px;
+  border: none;
+  background-color: var(--clr-1);
+  color: var(--clr-light1);
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.25s;
+}
+
+.action-btn:focus {
+  outline: none;
+}
+
+.action-btn:hover,
+.action-btn:focus-visible {
+  background-color: var(--clr-2);
+}
+
+.action-btn:focus-visible {
+  outline: 1px solid var(--clr-2);
+  outline-offset: var(--outline-offset);
+}
+
+.error {
+  color: var(--clr-error);
+}
+
+
+@media (max-width: 60em) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 30px;
+  }
+
+  .action-btn {
+    max-width: var(--button-width);
+    min-width: min-content;
+    margin-inline: auto;
+  }
+}
