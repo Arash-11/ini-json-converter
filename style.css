@@ -99,8 +99,11 @@ textarea {
 
 
 .buttons-container {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 2rem;
 }
 
@@ -119,6 +122,10 @@ textarea {
   transition: background-color 0.25s;
 }
 
+.action-btn:first-child {
+  margin-top: auto;
+}
+
 .action-btn:focus {
   outline: none;
 }
@@ -132,6 +139,12 @@ textarea {
   outline: 1px solid var(--clr-2);
   outline-offset: var(--outline-offset);
 }
+
+.gh-link {
+  margin-top: auto;
+  color: var(--clr-light1);
+}
+
 
 .error {
   color: var(--clr-error);

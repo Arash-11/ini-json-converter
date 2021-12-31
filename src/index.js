@@ -28,6 +28,7 @@ const convertIniToJson = (iniText) => {
 
 
 const convertJsonToIni = (jsonObj) => {
+  if (!jsonObj) return null;
   const result = [];
 
   const getKeyValuePairs = (obj) => {
@@ -40,7 +41,8 @@ const convertJsonToIni = (jsonObj) => {
     });
 
     objectKeys.forEach(key => {
-      result.push(`[${key}]\n`);
+      if (result.length === 0) result.push(`[${key}]\n`);
+      else result.push(`\n[${key}]\n`);
       getKeyValuePairs(obj[key]);
     });
   };
