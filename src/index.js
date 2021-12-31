@@ -3,6 +3,12 @@ const outputTextarea = document.querySelector('#output-textarea');
 const toJsonBtn = document.querySelector('[data-convert-to-json]');
 const toIniBtn = document.querySelector('[data-convert-to-ini]');
 
+inputTextarea.value = `; last modified 1 April 2001 by John Doe
+[owner]
+name = John Doe
+organization = Acme Widgets Inc.
+file = "payroll.dat"`;
+
 
 const convertIniToJson = (iniText) => {
   const result = {};
