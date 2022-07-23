@@ -21,7 +21,8 @@ const convertIniToJson = (iniText) => {
   // Some OSes seem to use a carriage return character returned by newline so we need to consider \r too.
   iniText.split(/\r?\n/).forEach(line => {
     let match = null;
-    // The use of ^ and $ in the conditionals are to make sure the expression matches the whole line and not just part of it. Leaving these out could result in strange behaviours for some inputs.
+    // The use of ^ and $ in the conditionals are to make sure the expression matches the whole line and not just part of it.
+    // Leaving these out could result in strange behaviours for some inputs.
     if (match = line.match(/^\[(.*)\]$/)) {
       result[match[1]] = {};
       section = result[match[1]];
@@ -42,7 +43,8 @@ const convertJsonToIni = (jsonObj) => {
   const result = [];
 
   const getKeyValuePairs = (obj) => {
-    // To avoid accidentally including a name-value pair inside the wrong section (e.g. including a top-level name-value pair within a section), we'll first go through the keys with non-object values.
+    // To avoid accidentally including a name-value pair inside the wrong section (e.g. including a top-level name-value pair within a section),
+    // we'll first go through the keys with non-object values.
     const notObjectKeys = Object.keys(obj).filter(key => typeof obj[key] !== 'object');
     const objectKeys = Object.keys(obj).filter(key => typeof obj[key] === 'object');
 
